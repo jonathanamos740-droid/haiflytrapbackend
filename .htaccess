@@ -1,0 +1,17 @@
+# ─── cPanel Node.js App — Passenger Proxy ─────────────
+# This file tells Apache/Passenger to forward all requests
+# to your Node.js application.
+
+PassengerNodejs /home/YOUR_CPANEL_USER/nodevenv/haify-trap-api/20/bin/node
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ / [L,QSA]
+
+# Enable CORS headers at Apache level (backup for Express CORS)
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, POST, PATCH, DELETE, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
