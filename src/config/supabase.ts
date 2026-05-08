@@ -1,3 +1,4 @@
+import ws from 'ws'
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 
@@ -11,19 +12,18 @@ if (!supabaseUrl || !supabaseAnonKey || !supabaseServiceKey) {
   throw new Error('Missing Supabase environment variables. Check .env file.');
 }
 
-/**
- * Public client — uses anon key, respects RLS.
- * Use for user-facing auth operations (signUp, signIn).
- */
-export const supabaseAnon: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey);
+export const supabaseAnon: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey, {
+  realtime: {
+    transport: ws as any
+  }
+});
 
-/**
- * Admin client — uses service role key, bypasses RLS.
- * Use for all privileged DB operations (CRUD, admin queries).
- */
 export const supabaseAdmin: SupabaseClient = createClient(supabaseUrl, supabaseServiceKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
   },
+  realtime: {
+    transport: ws as any
+  }
 });
