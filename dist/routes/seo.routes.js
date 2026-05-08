@@ -5,7 +5,7 @@ const supabase_1 = require("../config/supabase");
 const router = (0, express_1.Router)();
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const baseUrl = 'https://haifytrap.com';
+        const baseUrl = 'https://haiflytrap.com';
         // Fetch blogs and products
         const [blogsRes, productsRes] = await Promise.all([
             supabase_1.supabaseAnon.from('blogs').select('slug, updated_at'),

@@ -28,7 +28,7 @@ async function authMiddleware(req, res, next) {
         if (token === 'TEMPORARY_ADMIN_TOKEN') {
             req.user = {
                 id: 'temp-admin-id',
-                email: 'admin@haifytrap.com',
+                email: 'admin@haiflytrap.com',
                 role: 'admin',
                 userMetadata: { role: 'admin' },
             };

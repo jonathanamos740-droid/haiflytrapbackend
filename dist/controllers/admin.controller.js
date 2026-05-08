@@ -10,7 +10,7 @@ const uploadImage = async (req, res, next) => {
             return;
         }
         // Upload buffer directly to Cloudinary
-        const result = await (0, uploadImage_1.uploadToCloudinary)(req.file.buffer, 'haify-trap-products');
+        const result = await (0, uploadImage_1.uploadToCloudinary)(req.file.buffer, 'haifly-trap-products');
         res.status(200).json({
             success: true,
             data: {

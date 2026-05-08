@@ -20,7 +20,7 @@ const createHandler = async (req, res, next) => {
     try {
         const handlerData = req.body;
         // We auto-provision a Supabase Auth account using phone
-        const dummyEmail = `${handlerData.phone}@handler.haify.com`;
+        const dummyEmail = `${handlerData.phone}@handler.haifly.com`;
         const password = handlerData.phone;
         // 1. Create Auth user
         const { data: authData, error: authError } = await supabase_1.supabaseAdmin.auth.admin.createUser({
@@ -90,7 +90,7 @@ const deleteHandler = async (req, res, next) => {
         }
         // 3. Delete from Supabase Auth (best effort)
         try {
-            const dummyEmail = `${handler.phone}@handler.haify.com`;
+            const dummyEmail = `${handler.phone}@handler.haifly.com`;
             // Find user by email
             const { data: users, error: listError } = await supabase_1.supabaseAdmin.auth.admin.listUsers();
             if (!listError) {

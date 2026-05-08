@@ -103,7 +103,7 @@ const createOrder = async (req, res, next) => {
             
             <p style="font-size: 14px; line-height: 1.5; color: #1a2f23;">
               Stay safe,<br />
-              <strong>The Haify Trap Team</strong>
+              <strong>The Haifly Trap Team</strong>
             </p>
           </div>
         </div>
@@ -246,8 +246,8 @@ const updateOrderStatus = async (req, res, next) => {
               <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;" />
               
               <p style="font-size: 14px; line-height: 1.5; color: #1a2f23;">
-                Thank you for choosing Haify Trap,<br />
-                <strong>The Haify Trap Team</strong>
+                Thank you for choosing Haifly Trap,<br />
+                <strong>The Haifly Trap Team</strong>
               </p>
             </div>
           </div>

@@ -45,6 +45,6 @@ app.use('/', seo_routes_1.default);
 app.use(errorHandler_1.errorHandler);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`🚀 Haify Trap API running on port ${PORT}`);
+    console.log(`🚀 Haifly Trap API running on port ${PORT}`);
 });
 //# sourceMappingURL=server.js.map

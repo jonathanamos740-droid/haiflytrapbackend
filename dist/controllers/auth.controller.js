@@ -117,7 +117,7 @@ const handlerLogin = async (req, res, next) => {
             res.status(400).json({ success: false, error: 'Phone number is required' });
             return;
         }
-        const dummyEmail = `${phone}@handler.haify.com`;
+        const dummyEmail = `${phone}@handler.haifly.com`;
         const password = phone;
         const { data, error } = await supabase_1.supabaseAnon.auth.signInWithPassword({
             email: dummyEmail,

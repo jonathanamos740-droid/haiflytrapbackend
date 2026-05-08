@@ -33,7 +33,7 @@ exports.upload = (0, multer_1.default)({
 /**
  * Upload a buffer to Cloudinary and return the URL + public_id.
  */
-async function uploadToCloudinary(fileBuffer, folder = 'haify-trap') {
+async function uploadToCloudinary(fileBuffer, folder = 'haifly-trap') {
     return new Promise((resolve, reject) => {
         const uploadStream = cloudinary_1.default.uploader.upload_stream({
             folder,
