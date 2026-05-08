@@ -8,6 +8,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const allowedOrigins = [
     process.env.FRONTEND_URL,
+    'https://haiflytrapng.com',
+    'https://www.haiflytrapng.com',
     'http://localhost:5173',
     'http://localhost:5174',
     'http://localhost:5175',
@@ -15,10 +17,10 @@ const allowedOrigins = [
 ].filter(Boolean);
 exports.corsOptions = {
     origin: (origin, callback) => {
-        // Allow requests with no origin (e.g. mobile apps, curl, Postman)
         if (!origin)
             return callback(null, true);
-        if (allowedOrigins.some((allowed) => origin.startsWith(allowed))) {
+        if (allowedOrigins.some((allowed) => origin.startsWith(allowed)) ||
+            origin.endsWith('.vercel.app')) {
             callback(null, true);
         }
         else {
@@ -28,6 +30,6 @@ exports.corsOptions = {
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-    maxAge: 86400, // Cache preflight for 24h
+    maxAge: 86400,
 };
 //# sourceMappingURL=cors.js.map
